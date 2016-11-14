@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * 
+ */
+-->
+<config>
+    <menu>
+         <new translate="title" module="new">
+            <title>News</title>
+            <sort_order>70</sort_order>
+            <children>
+                <new translate="title" module="new">
+                    <title>News</title>
+                    <action>adminhtml/news</action>
+                    <sort_order>0</sort_order>
+                </new>
+         
+            </children>
+         </new>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                   
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <new translate="title" module="new">
+                                        <title>Content Management</title>
+                                    </new>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                      
+                <new translate="title" module="new">
+                    <title>News</title>
+                   
+                </new>
+         
+           
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

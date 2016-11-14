@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config>
+    <modules>
+        <DIM_New>
+            <version>1.0.2</version>
+        </DIM_New>
+    </modules>
+    <global>
+        <blocks>
+            <new>
+            <class>DIM_New_Block</class>
+            </new>
+        </blocks>
+        <models>
+            <new>
+                <class>DIM_New_Model</class>
+                <resourceModel>new_resource</resourceModel>
+            </new>
+            <new_resource>
+                <class>DIM_New_Model_Resource</class>
+                <entities>
+                    <news>
+                        <table>dim_new</table>
+                    </news>
+                    
+                </entities>
+            </new_resource>
+        </models>
+        <resources>
+            <new_setup>
+                <setup>
+                    <module>DIM_New</module>
+                </setup>
+            </new_setup>
+        </resources>
+        <helpers>
+            <new>
+                <class>DIM_New_Helper</class>
+            </new>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <new module="new">
+                    <file>dimnew.xml</file>
+                </new>
+            </updates>
+        </layout>
+        <routers>
+            <new>
+                <use>standard</use>
+                <args>
+                    <module>DIM_New</module>
+                    <frontName>dimnew</frontName>
+                </args>
+            </new>
+        </routers>
+    </frontend>
+    <adminhtml>
+         <layout>
+            <updates>
+                <new module="new">
+                    <file>dimnew.xml</file>
+                </new>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <new before="Mage_Adminhtml">DIM_New_Adminhtml</new>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+        
+    </admin>
+    <default>
+        <new>
+            <global>
+                <enabled>1</enabled>
+                <news_count>10</news_count>
+            </global>
+        </new>
+    </default>
+</config>
