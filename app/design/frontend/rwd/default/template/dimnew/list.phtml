@@ -1,0 +1,41 @@
+<?php
+$news=$this->getNews();
+$newsViewUrl=Mage::getUrl('dimnew/index/view');
+?>
+<div class="page-header">
+<h1>News</h1>
+</div>
+   <?php if($news->count()):?>
+<div class="btn-group-vertical">
+        
+<?php echo $this->getPagerHtml(); ?>      
+   
+</div>
+<?php  foreach ($news as $item): ?>
+<div class="row">
+    <div class="well">
+<h2>
+    <a href="<?php echo $newsViewUrl;?>?id=<?php echo $item->getId(); ?>">
+    <?php echo $item->getTitle(); ?>
+    </a>
+ </h2>
+    <?php $newslength=Mage::getStoreConfig('new/global/news_text'); 
+     $newslengthint=  intval($newslength);
+     $cutcontent=  substr($item->getContent(), 0, $newslengthint);
+ if($newslengthint>0&&!is_null($item->getContent())) {
+     echo '<br><div class="text-justified">' ;
+     echo $cutcontent ; ?>
+        <a href="<?=  $newsViewUrl;?>?id=<?= $item->getId(); ?>">
+            <button class="btn btn-info">read more</button>
+        </a>
+<br> 
+ <?php echo '</div>';}  ?>
+  <?php  if($newslengthint>0&&is_null($item->getContent())) {
+     echo'<br><div class="bg bg-info">no content yet</div>';
+ } ?>
+    </div>
+    <hr>
+</div>
+<?php endforeach; ?>
+<?php endif;?>
+

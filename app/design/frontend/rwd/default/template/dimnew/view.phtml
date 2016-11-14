@@ -1,0 +1,13 @@
+<h1><?php echo $newsItem->getTitle(); ?></h1>
+<div class="content-box">
+    <div class="text-left box-content">
+    <?php echo $newsItem->getContent(); ?>  
+    </div>
+  
+<div class="info text-right">
+    <span class="label label-info">
+    <?php if (Mage::getStoreConfig('new/global/date_created')=='1') echo $newsItem->getDateCreated(); ?> 
+    </span>
+</div>
+<a href="<?php echo Mage::getUrl('dimnew/index/index'); ?>"><button class="btn btn-block"><small>&laquo; </small><?php echo $this->__('Back to News List') ?></button></a>
+</div>
