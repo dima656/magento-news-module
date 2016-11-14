@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--       
+-->
+
+<layout version="1.0.0">
+    <new_index_index>
+        <reference name="head">
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>dimnew/css/bootstrap.min.css</name>
+			</action>
+                        <action method="addItem">
+				<type>skin_js</type>
+				<script>dimnew/js/bootstrap.min.js</script>
+			</action>        
+      </reference>
+        <reference name="content">
+            <block type="new/list" name="new/list" template="dimnew/list.phtml"/>   
+        </reference> 
+    </new_index_index>
+    <new_index_view>
+        <reference name="head">
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>dimnew/css/bootstrap.min.css</name>
+			</action>
+                        <action method="addItem">
+				<type>skin_js</type>
+				<script>dimnew/js/bootstrap.min.js</script>        
+			</action>
+      </reference>
+        <reference name="content">
+            <block type="new/view" name="news.content" template="dimnew/view.phtml" />
+        </reference>
+    </new_index_view>
+</layout>
