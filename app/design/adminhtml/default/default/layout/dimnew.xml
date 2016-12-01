@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<layout version="1.0.0">
+    <adminhtml_news_edit>
+        <update handle="editor"/>
+         <reference name="head">
+            <action method="setCanLoadExtJs"><flag>1</flag></action>
+            <action method="setCanLoadRulesJs"><flag>1</flag></action>
+        </reference>
+    </adminhtml_news_edit>
+    
+</layout>
